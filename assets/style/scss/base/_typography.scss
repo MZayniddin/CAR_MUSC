@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Reforma Grotesk';
+  src: url('../../../font/ReformaGroteskBold.eot');
+  src: local('../../../font/Reforma Grotesk Bold'), local('../../../font/ReformaGroteskBold'),
+    url('../../../font/ReformaGroteskBold.eot?#iefix') format('embedded-opentype'),
+    url('../../../font/ReformaGroteskBold.woff2') format('woff2'),
+    url('../../../font/ReformaGroteskBold.woff') format('woff'),
+    url('../../../font/ReformaGroteskBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Reforma Grotesk Demi';
+  src: url('../../../font/ReformaGroteskDemi.eot');
+  src: local('../../../font/Reforma Grotesk Demi'), local('../../../font/ReformaGroteskDemi'),
+    url('../../../font/ReformaGroteskDemi.eot?#iefix') format('embedded-opentype'),
+    url('../../../font/ReformaGroteskDemi.woff2') format('woff2'),
+    url('../../../font/ReformaGroteskDemi.woff') format('woff'),
+    url('../../../font/ReformaGroteskDemi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Reforma Grotesk';
+  src: url('../../../font/ReformaGroteskMedium.eot');
+  src: local('../../../font/Reforma Grotesk Medium'), local('../../../font/ReformaGroteskMedium'),
+    url('../../../font/ReformaGroteskMedium.eot?#iefix') format('embedded-opentype'),
+    url('../../../font/ReformaGroteskMedium.woff2') format('woff2'),
+    url('../../../font/ReformaGroteskMedium.woff') format('woff'),
+    url('../../../font/ReformaGroteskMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Reforma Grotesk';
+  src: url('../../../font/ReformaGroteskLight.eot');
+  src: local('../../../font/Reforma Grotesk Light'), local('../../../font/ReformaGroteskLight'),
+    url('../../../font/ReformaGroteskLight.eot?#iefix') format('embedded-opentype'),
+    url('../../../font/ReformaGroteskLight.woff2') format('woff2'),
+    url('../../../font/ReformaGroteskLight.woff') format('woff'),
+    url('../../../font/ReformaGroteskLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+body,
+button {
+  font-family: 'Reforma Grotesk', sans-serif;
+}

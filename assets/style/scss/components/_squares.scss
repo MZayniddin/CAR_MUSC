@@ -1,0 +1,12 @@
+@use '../abstract/variables';
+
+.squares {
+  display: flex;
+  gap: 0 30px;
+  .square {
+    height: 10px;
+    width: 10px;
+    background-color: variables.$red-c;
+    transform: rotate(-45deg);
+  }
+}

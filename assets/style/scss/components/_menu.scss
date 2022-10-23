@@ -1,0 +1,18 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+.nav{
+  display: flex;
+  &__items{
+    display: flex;
+    gap: 0px 40px;
+  }
+
+  &__link {
+    @include mixins.text(variables.$fz-24, variables.$fw-500, variables.$white-c, 120%);
+    letter-spacing: 0.03em;
+
+    &:hover {
+      color: variables.$red-c;
+    }
+  }
+} 

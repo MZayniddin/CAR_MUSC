@@ -1,0 +1,690 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.hero {
+  background-image: url('../../../../img/banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    @include mixins.text(150px, variables.$fw-700, variables.$red-c, 125%);
+    padding-top: 150px;
+  }
+
+  .squares {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    text-align: center;
+    @include mixins.text(40px, variables.$fw-500, variables.$white-c, 120%);
+    max-width: 437px;
+    margin-bottom: 40px;
+  }
+
+  .link-service {
+    max-width: 110px;
+    padding: 15px 25px;
+    background: variables.$red-c;
+    @include mixins.text(variables.$fz-24, variables.$fw-600, variables.$white-c, 140%);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 103px;
+
+    &:hover {
+      max-width: 170px;
+    }
+  }
+
+  .contact {
+    display: flex;
+    justify-content: center;
+
+    &__box {
+      flex: 1;
+      padding: 43px 10px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    &__box:first-child {
+      padding: 50px 0;
+
+      .contact__text {
+        max-width: 265px;
+        margin: 0 auto;
+      }
+    }
+
+    &__box:not(:first-child) {
+      .contact__text:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__box:nth-child(2) {
+      border: 1px solid rgba(255, 255, 255, 0.5)
+    }
+
+    &__title {
+      @include mixins.text(variables.$fz-18, variables.$fw-600, variables.$white-c, 140%);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    &__text,
+    a {
+      display: block;
+      @include mixins.text(variables.$fz-24, variables.$fw-600, variables.$red-c, 140%);
+      letter-spacing: 0.05em;
+    }
+
+  }
+}
+
+.achievements {
+  padding: 180px 0px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5px;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  .squares {
+    margin-bottom: 60px;
+  }
+
+  &__text {
+    max-width: 526px;
+  }
+
+  &__place-wrapper {
+    display: flex;
+    z-index: -1;
+  }
+
+  &__place:first-child {
+    z-index: 1;
+  }
+
+  &__place:last-child {
+    position: relative;
+    left: -1px;
+    bottom: -40px;
+
+    .achievements__place-box:last-child {
+      padding-top: 30px;
+
+      img {
+        margin-bottom: 22px;
+      }
+    }
+  }
+
+  &__place-box {
+    max-width: 318px;
+    width: 100%;
+    text-align: center;
+    padding: 25px 20px 34px;
+    border: 1px solid variables.$gray-c;
+  }
+
+  .place-text {
+    @include mixins.text(variables.$fz-52, variables.$fw-600, variables.$red-c, 140%);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    span {
+      font-size: variables.$fz-24;
+    }
+  }
+}
+
+.cars-card {
+  padding: 0 20px;
+
+  .slide-content {
+    margin: 0 50px;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .car-card {
+    &__img {
+      width: 100%;
+    }
+
+    &__text {
+      max-width: 286px;
+      @include mixins.text(variables.$fz-18, variables.$fw-600, variables.$white-c, 140%);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: -10px auto 0;
+      position: relative;
+      text-align: center;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 107%;
+        height: 70px;
+        background-color: variables.$red-c;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+.work {
+  padding: 180px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 15px;
+  }
+
+  &-content {
+    max-width: 526px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 45px;
+  }
+
+  &-content__box-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    column-gap: 30px;
+  }
+
+  &__slider {
+    max-width: 636px;
+    max-height: 656px;
+  }
+
+  &__car-card {
+    text-align: center;
+
+    &__text {
+      max-width: 422px;
+      margin: 40px auto 0;
+    }
+  }
+}
+
+.services {
+  text-align: center;
+
+  .squares {
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  .btn-services {
+    padding: 20px 40px;
+    background-color: transparent;
+
+    &:first-child,
+    &:hover {
+      background-color: variables.$red-c;
+    }
+  }
+
+  &__card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  &__card {
+    padding: 170px 40px 50px;
+    border: 1px solid variables.$gray-c;
+
+    &-title {
+      display: block;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &-text {
+      margin-bottom: 25px;
+    }
+
+    &-link {
+      display: inline-block;
+      max-width: 58px;
+      padding: 10px 20px;
+      background-color: variables.$red-c;
+
+      &:hover {
+        max-width: 115px;
+      }
+    }
+  }
+
+  &__card:first-child>.services__card-title::after {
+    content: url('../../../../img/wash_icon.svg');
+    top: -85px;
+  }
+
+  &__card:nth-child(2)>.services__card-title::after {
+    content: url('../../../../img/car_todo_icon.svg');
+    top: -92px;
+  }
+
+  &__card:nth-child(3)>.services__card-title::after {
+    content: url('../../../../img/oil_icon.svg');
+    top: -79px;
+  }
+
+  &__card:last-child>.services__card-title::after {
+    content: url('../../../../img/car_service_icon.svg');
+    top: -90px;
+  }
+}
+
+.our-work {
+  .container {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .squares {
+    justify-content: center;
+  }
+
+  &__images-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.contact {
+  padding: 120px 0 100px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .squares {
+    margin-bottom: 60px;
+  }
+
+  .form {
+    max-width: 636px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px 0;
+  }
+
+  .form__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 24px;
+  }
+
+  input[type="text"] {
+    max-width: 100%;
+    flex: 1;
+  }
+
+  input[type="text"],
+  .textarea {
+    background-color: transparent;
+    border: 1px solid variables.$gray-c;
+    padding: 15px 25px;
+
+    &:focus {
+      border-color: variables.$red-c;
+    }
+  }
+
+  .text-area {
+    display: flex;
+    width: 100%;
+    gap: 0 10px;
+    justify-content: space-between;
+  }
+
+  .textarea {
+    max-width: 526px;
+    min-height: 150px;
+    width: 100%;
+    resize: none;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    &-box {
+      padding: 13px 10px 10px;
+      border: 1px solid variables.$gray-c;
+
+      &:hover {
+        border-color: variables.$red-c;
+
+        path {
+          fill: variables.$red-c;
+        }
+      }
+    }
+  }
+
+  .form-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btn-send {
+    max-width: 61px;
+    background-color: variables.$red-c;
+    padding: 15px 25px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &:hover {
+      max-width: 124px;
+    }
+  }
+
+  .form-contact p,
+  a {
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
+  }
+
+  .contact-type {
+    display: flex;
+    justify-content: end;
+    column-gap: 30px;
+    margin-top: 13px;
+  }
+}
+
+.footer {
+  padding: 33px 0;
+  border-top: 1px solid variables.$gray-c;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 15px;
+  }
+
+  .nav {
+    white-space: nowrap;
+  }
+
+  &-text {
+    opacity: 0.5;
+  }
+}
+
+@include mixins.media(1050px) {
+  .achievements__title {
+    font-size: 40px;
+  }
+
+  .work {
+    padding: 100px 0;
+
+    .container {
+      flex-direction: column;
+      gap: 50px 0;
+    }
+
+    &__slider {
+      max-width: 590px;
+      max-height: 656px;
+    }
+  }
+
+  .services__card-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .our-work {
+    &__images-wrapper {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    &__img:nth-child(6),
+    &__img:nth-child(12),
+    &__img:nth-child(18) {
+      display: none;
+    }
+  }
+
+  .footer .nav__items {
+    gap: 0 20px
+  }
+
+}
+
+@include mixins.media(830px) {
+  .footer .nav {
+    display: none;
+  }
+}
+
+@include mixins.media(630px) {
+  .hero {
+    &__title {
+      font-size: 100px;
+      line-height: 100%;
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      font-size: variables.$fz-32;
+    }
+
+    .contact {
+      &__box:first-child {
+        display: none;
+      }
+
+      &__box {
+        padding: 30px 10px;
+      }
+
+      &__box:nth-child(2) {
+        border-left: none;
+      }
+
+      &__title {
+        margin-bottom: 15px;
+      }
+
+      &__text,
+      a {
+        font-size: variables.$fz-18;
+
+        &:not(:last-child) {
+          margin-bottom: 10px !important;
+        }
+      }
+    }
+  }
+
+  .achievements {
+    padding: 100px 0;
+
+    .container {
+      flex-direction: column;
+      gap: 30px 0;
+    }
+  }
+
+  .cars-card {
+    .slide-content {
+      margin: 0 30px;
+    }
+
+    .car-card {
+      &__text {
+        font-size: variables.$fz-16;
+
+        &::before {
+          height: 50px;
+          top: -10px;
+        }
+      }
+    }
+  }
+
+  .work {
+    padding: 100px 0;
+
+    .container {
+      flex-direction: column;
+      gap: 50px 0;
+    }
+
+    &__slider {
+      max-width: 100%;
+      max-height: 660px;
+    }
+
+    &__car-card {
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      &__text {
+        font-size: variables.$fz-16;
+        max-width: 75%;
+        margin-top: 20px;
+      }
+    }
+
+    &-content__box {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__text {
+      font-size: 20px;
+    }
+  }
+
+  .services {
+    &__buttons {
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .btn-services {
+      padding: 15px 30px;
+      font-size: 28px;
+    }
+
+    &__card-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__card-link {
+      padding: 8px 18px;
+      font-size: variables.$fz-16;
+    }
+  }
+
+  .our-work {
+    &__images-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__img {
+      display: none;
+    }
+
+    &__img:first-child,
+    &__img:nth-child(4),
+    &__img:nth-child(5),
+    &__img:nth-child(2),
+    &__img:nth-child(7),
+    &__img:nth-child(10) {
+      display: block;
+    }
+  }
+}
+
+@include mixins.media(488px) {
+  .contact {
+    padding: 100px 0 80px;
+
+    .form-footer {
+      flex-direction: column-reverse;
+      row-gap: 20px;
+    }
+
+    .contact-type {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      row-gap: 13px;
+    }
+
+    input[type="text"],
+    .textarea {
+      padding: 15px 15px;
+    }
+  }
+}

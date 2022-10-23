@@ -1,0 +1,33 @@
+@use '../abstract/variables';
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: all 0.5s;
+}
+
+body {
+  background-color: variables.$primary-bg-c;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  outline: none;
+}

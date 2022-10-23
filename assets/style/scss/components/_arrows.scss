@@ -1,0 +1,35 @@
+@use '../abstract/mixins';
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 50px;
+  height: 50px;
+}
+
+.work-swiper1,
+.work-swiper2 {
+  top: 95%;
+}
+
+.work-swiper1 {
+  right: 0;
+}
+
+.work-swiper2 {
+  left: 0;
+}
+
+@include mixins.media(630px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@include mixins.media(388px) {
+  .work-swiper1,
+  .work-swiper2 {
+    top: 85%;
+  }
+}

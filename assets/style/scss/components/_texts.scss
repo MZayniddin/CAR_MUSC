@@ -1,0 +1,38 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.title {
+  @include mixins.text(variables.$fz-52, variables.$fw-600, variables.$white-c, 140%);
+  margin-bottom: 40px;
+}
+
+.text-x {
+  @include mixins.text(variables.$fz-24, variables.$fw-500, variables.$white-c, 120%);
+  letter-spacing: 0.03em;
+}
+
+.text-xl {
+  @include mixins.text(variables.$fz-32, variables.$fw-600, variables.$white-c, 140%);
+}
+
+.text-m {
+  @include mixins.text(variables.$fz-18, variables.$fw-600, variables.$white-c, 140%);
+}
+
+.text-s {
+  @include mixins.text(variables.$fz-16, variables.$fw-600, variables.$white-c, 140%);
+}
+
+.title,
+.text-xl,
+.text-m,
+.text-s {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@include mixins.media(630px) {
+  .title {
+    font-size: 46px;
+  }
+}
